@@ -4,7 +4,7 @@ import multer from 'multer';
 import uploadConfig from './config/upload';
 
 const routes = Router();
-const upload = multer();
+const upload = multer(uploadConfig);
 
 routes.post('/orphanage', upload.array('images'), OrphanagesController.create);
 routes.get('/orphanage', OrphanagesController.index);
